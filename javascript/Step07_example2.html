@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step07_example2.html</title>
+</head>
+
+<body>
+    <button id="getInfo">정보 받아오기</button>
+    <p>이름 : <strong id="name"></strong></p>
+    <h3>취미</h3>
+    <ul id="hobby">
+
+    </ul>
+    <script>
+        document.querySelector("#getInfo").addEventListener(("click"), () => {
+            fetch("info.json")
+                .then((res) => {
+                    return res.json();
+                })
+                .then((data) => {
+                    console.log(data);
+
+                    document.querySelector("#name").innerText = data.name;
+                    const hb = data.hobby
+
+                    console.log(hb);
+
+                    hb.forEach((a) => {
+                        const li = document.createElement("li");
+                        li.innerText = a;
+                        document.querySelector("#hobby").append(li);
+                    })
+
+                })
+        })
+    </script>
+</body>
+
+</html>

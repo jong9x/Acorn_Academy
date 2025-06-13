@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>step05_exameple4</title>
+    <style>
+        .panel {
+            width: 500px;
+            margin: 0 auto;
+            border: 1px solid blue;
+        }
+
+        canvas {
+            cursor: crosshair;
+            margin: 0 auto;
+            border: 1px solid red;
+            display: block;
+            /* canvas는 inline 요소임으로 block 요소로 변경 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="panel">
+        <input type="color" id="inputColor">
+        <select id="selectWidth">
+            <option>2</option>
+            <option>4</option>
+            <option>6</option>
+            <option>8</option>
+            <option>10</option>
+            <option>20</option>
+            <option>50</option>
+            <option>100</option>
+        </select>
+        <button id="resetBtn">초기화</button>
+    </div>
+    <div class="box">
+
+    </div>
+    <canvas width="500" height="500" id="myCanvas"></canvas>
+
+    <script>
+        const canvas = document.querySelector("#myCanvas");
+        const ctx = canvas.getContext("2d");
+
+        let isDrawing = false;
+        let selectedColor = "black";
+        let selectWidth = 2;
+
+        // 색상 변경
+        document.querySelector("#inputColor").addEventListener("change", (e) => {
+            selectedColor = e.target.value;
+        });
+
+        // 선 두께 변경
+        document.querySelector("#selectWidth").addEventListener("change", (e) => {
+            selectWidth = Number(e.target.value);
+        });
+
+
+        document.querySelector("canvas").addEventListener("mousedown", (e) => {
+            isDrawing = true;
+
+            ctx.strokeStyle = selectedColor; // 선의 색상
+            ctx.lineWidth = selectWidth; // 선의 굵기
+            ctx.lineCap = "round"; // 선의 시작점과 끝점을 둥글게
+            ctx.lineJoin = "round"; // 모서리 부분 둥글게 
+            // 선을 그릴 준비를 하고 시작점으로 이동
+            ctx.beginPath();
+            ctx.moveTo(e.offsetX, e.offsetY);
+        });
+
+        document.querySelector("canvas").addEventListener("mouseup", () => {
+            isDrawing = false;
+            ctx.closePath();
+        });
+
+        document.querySelector("canvas").addEventListener("mouseout", () => {
+            isDrawing = false;
+            ctx.closePath();
+        });
+
+        document.querySelector("#resetBtn").addEventListener("click", () => {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        })
+
+        document.querySelector("canvas").addEventListener("mousemove", (e) => {
+            if (isDrawing == true) {
+
+                const infoX = e.offsetX;
+                const infoY = e.offsetY;
+                ctx.lineTo(infoX, infoY);
+                ctx.stroke();
+            }
+        });
+    </script>
+</body>
+
+</html>

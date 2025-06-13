@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step03_document7</title>
+</head>
+
+<body>
+    <input type="text" id="inputMsg">
+    <button onclick="submitMsg()">전송</button>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <script>
+        const submitMsg = () => {
+            const msg = document.querySelector("#inputMsg").value;
+            for (let i = 0; i < document.querySelectorAll("p").length; i++) {
+                document.querySelectorAll("p")[i].innerText = msg;
+            }
+            document.querySelector("#inputMsg").value = "";
+        }
+    </script>
+
+</body>
+
+</html>

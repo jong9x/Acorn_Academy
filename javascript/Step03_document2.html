@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step03_document2.html</title>
+    <!-- <style>
+        p {
+            color: blue;
+        }
+
+        .my_class {
+            color: green;
+        }
+
+        .your_class {
+            color: orange;
+            border: 5px solid blue;
+        }
+
+        #one {
+            color: skyblue;
+        }
+    </style> -->
+</head>
+
+<body>
+    <p>p1</p>
+    <!-- 다중 클래스를 부여할 때는 띄어 쓰기해서 부여하면 된다 -->
+    <p class="my_class">p2</p>
+    <p id="one" class="my_class your_class">p3</p>
+    <p id="two" class="my_class your_class">p4</p>
+    <p>p5</p>
+    <button onclick="changeSc()">#one에 적용</button>
+    <button onclick="y_class()">your_class에 적용하기기</button>
+    <button onclick="re_class()">원상복구</button>
+    <script>
+        // id 가 one 인 요소의 배경색을 green 으로 변경
+        function changeSc() {
+            document.querySelector("#one").style.color = "yellow";
+            document.querySelector("#one").style.backgroundColor = "green";
+            document.querySelector("#one").innerText = "script p3"
+            document.querySelector("#one").style.border = "5px solid pink"
+            document.querySelector("#one").style.fontSize = "24px";
+        }
+
+        // id 가 two 인 요소의 글자색을 pink 로 변경해보세요
+        document.querySelector("#two").style.color = "pink";
+
+        document.querySelectorAll(".my_class")[0].style.color = "red";
+        document.querySelectorAll(".my_class")[1].style.color = "red";
+        document.querySelectorAll(".my_class")[2].style.color = "red";
+
+        document.querySelectorAll(".your_class")[0].style.backgroundColor = "yellow";
+        document.querySelectorAll(".your_class")[1].style.backgroundColor = "yellow";
+
+        function y_class() {
+            document.querySelectorAll(".your_class")[0].style.fontSize = "20px";
+            document.querySelectorAll(".your_class")[1].style.fontSize = "20px";
+        };
+
+         function re_class() {
+            document.querySelectorAll(".your_class")[0].style.fontSize = "";
+            document.querySelectorAll(".your_class")[1].style.fontSize = "";
+        };
+    </script>
+</body>
+
+</html>

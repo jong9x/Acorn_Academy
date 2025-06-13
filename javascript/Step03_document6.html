@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step03_document6</title>
+</head>
+
+<body>
+    <input type="text" id="inputMsg">
+    <button onclick="submitMsg()">전송</button>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <script>
+        function submitMsg() {
+            const msg = document.querySelector("#inputMsg").value;
+            /*
+                i의 초기값은 0
+                i < 10이 조건이 true 인 동안에 반복해라
+                i를 1씩 증가 시키면서...
+                10은 반복횟수를 의미한다다
+            */
+            for (let i = 0; i < 100; i++) {
+                document.querySelectorAll("p")[i].innerText = msg;
+            }
+            document.querySelector("#inputMsg").value = "";
+        }
+
+
+    </script>
+
+</body>
+
+</html>

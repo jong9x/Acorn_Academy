@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form3.html</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>회원가입 폼</h1>
+        <form action="signup" method="post">
+            <div>
+                <label for="email">이메일</label>
+                <input type="email" name="email" id="email" placeholder="이메일 입력...">
+                <br>
+                <label for="password">비밀번호</label>
+                <input type="password" name="pwd" id="pwd" placeholder="비밀번호 입력...">
+            </div>
+            <fieldset>
+                <legend>성별선택</legend>
+                <label>
+                    <input type="radio" name="gender" id="man" checked> 남자
+                </label>
+                <label>
+                    <input type="radio" name="gender" id="woman"> 여자
+                </label>
+            </fieldset>
+
+            <fieldset>
+                <legend>취미 정보 선택</legend>
+                <label>
+                    <input type="checkbox" name="hobby" value="leather"> 가죽공예
+                </label>
+                <label>
+                    <input type="checkbox" name="hobby" value="game"> 게임
+                </label>
+                <label>
+                    <input type="checkbox" name="hobby" value="music"> 음악
+                </label>
+                <label>
+                    <input type="checkbox" name="hobby" value="book"> 독서
+                </label>
+
+            </fieldset>
+
+            <label for="job">직업</label>
+            <select name="job" id="job">
+                <option value="">선택하세요</option>
+                <option value="student">학생</option>
+                <option value="teacher">선생님</option>
+                <option value="doctor">의사</option>
+                <option value="police">경찰</option>
+                <option>기타</option>
+            </select>
+            <br>
+            <button type="submit">회원가입</button>
+            <button type="reset">초기화</button>
+            <br>
+            <label for="lunch">점심 선택</label>
+            <select name="lunch" id="lunch" multiple>
+                <optgroup label="김밥천국">
+                    <option>라면</option>
+                    <option>김밥</option>
+                    <option>떡볶이</option>
+                </optgroup>
+                <optgroup label="왕돈가스전문점">
+                    <option>왕돈가스</option>
+                    <option>왕돈가스더블</option>
+                    <option>카레왕돈가스</option>
+                </optgroup>
+            </select>
+            <br>
+            <label for="file">첨부파일</label>
+            <input type="file" name="file" id="file">
+            <br>
+
+            <label for="commemt">하고 싶은 말</label>
+            <textarea name="comment" id="commemt" rows="10" cols="57"></textarea>
+            <br>
+        </form>
+        
+
+    </div>
+</body>
+
+</html>

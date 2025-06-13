@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step03_example.html</title>
+</head>
+
+<body>
+    <input type="text" id="inputName" placeholder="이름 입력...">
+    <button onclick="nameAdd()">추가</button>
+    <ul id="nameList">
+        <li>서종훈</li>
+        <li>유재석</li>
+    </ul>
+    <script>
+        // function nameAdd() {
+        //     const newLi = document.createElement("li");
+        //     const liName = document.querySelector("#inputName");
+        //     newLi.innerText = liName.value;
+        //     document.querySelector("#nameList").append(newLi);
+        //     liName.value = ""
+        // }
+
+        const nameAdd = () => {
+            const newLi = document.createElement("li");
+            const liName = document.querySelector("#inputName");
+            newLi.innerText = liName.value;
+            document.querySelector("#nameList").append(newLi);
+            liName.value = ""
+        }
+    </script>
+</body>
+
+</html>

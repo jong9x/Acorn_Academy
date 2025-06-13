@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step04_eventListener4</title>
+</head>
+
+<body>
+    <button id="printBtn">친구목록 출력하기</button>
+    <button id="printBtn2">친구목록 출력하기2</button>
+    <ul id="nameList">
+
+    </ul>
+    <script>
+        const friends = ["서종훈", "해골", "원숭이", "유재석", "가재맨", "괴물쥐"];
+
+        document.querySelector("#printBtn2").addEventListener("click", ()=> {
+            friends.forEach((a)=> {
+                const nameList = document.querySelector("#nameList");
+                const li = document.createElement("li");
+                li.innerText = a;
+                nameList.append(li);
+            })
+        });
+
+
+        /*
+            "친구목록 출력하기" 버튼을 누르면 friends 배열 안에 있는 친구 이름을
+            ul 요소에 반복문 돌면서 모두 출력해 보세요.
+            단) li 하나에 이름이 하나씩 출력이 되어야 합니다.
+        */
+
+        document.querySelector("#printBtn").addEventListener("click", () => {
+            const nameList = document.querySelector("#nameList");
+            for (let i = 0; i < friends.length; i++) {
+                const addLi = document.createElement("li");
+                addLi.innerText = friends[i];
+                nameList.append(addLi)
+            }
+        });
+
+        // let pushFriends = 0;
+        // document.querySelector("#printBtn").addEventListener("click", () => {
+        //     const nameList = document.querySelector("#nameList");
+        //     if (pushFriends < friends.length){
+        //         const addLi = document.createElement("li");
+        //         addLi.innerText = friends[pushFriends];
+        //         nameList.append(addLi);
+        //         pushFriends++;
+        //     }
+        // })
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step03_document1.html</title>
+</head>
+
+<body>
+    <div id = "container">
+    <p>p1</p>
+    <p>p2</p>
+    <p>p3</p>
+    <p>p4</p>
+    <p>p5</p>
+    <button onclick="change()">변경하기</button>
+    <button onclick="back()">되돌리기</button>
+    <button onclick="change2()">변경2번</button>
+    <button onclick="change3()">p 추가</button>
+    </div>
+    <script>
+
+        function change() {
+            // 이 2줄의 코드가 언제 실행되는지 생각해 보세요.
+            document.querySelector("p").innerText = "Seo Jong Hoon";
+            document.querySelector("p").style.color = "red";
+            document.querySelectorAll("p")[1].innerText = "두번째는 이렇게 바꿔";
+            document.querySelectorAll("p")[1].style.color = "blue";
+        }
+
+        let change2 = function () {
+            document.querySelector("p").innerText = "바꿔보자";
+            document.querySelector("p").style.color = "purple";
+            document.querySelectorAll("p")[3].innerText = "이거도 바껴지네";
+            document.querySelectorAll("p")[3].style.color = "yellow";
+        }
+
+        let change3 = () => {
+            let newP = document.createElement("p");
+            newP.textContent = "새로 추가된 문단";
+            document.getElementById("container").appendChild(newP);
+        };
+
+        function back() {
+            // 이 2줄의 코드가 언제 실행되는지 생각해 보세요.
+            document.querySelector("p").innerText = "p1";
+            document.querySelector("p").style.color = "black";
+            document.querySelectorAll("p")[1].innerText = "p2";
+            document.querySelectorAll("p")[1].style.color = "black";
+        }
+
+
+    </script>
+</body>
+
+</html>

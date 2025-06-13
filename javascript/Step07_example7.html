@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step07_example7.html</title>
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #f7f9fc;
+            font-family: 'Segoe UI', sans-serif;
+            padding: 40px 20px;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+            color: #2c3e50;
+            text-align: center;
+        }
+
+        .table-wrapper {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 800px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            overflow: hidden;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #ffffff;
+        }
+
+        thead {
+            background: linear-gradient(to right, #c3eaf2, #e1f5fe);
+        }
+
+        th,
+        td {
+            padding: 14px 20px;
+            text-align: center;
+            border-bottom: 1px solid #e0e0e0;
+            font-size: 16px;
+        }
+
+        th {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tbody tr:hover {
+            background-color: #f1f1f1;
+            transition: background-color 0.3s ease;
+        }
+
+        @media screen and (max-width: 850px) {
+            table {
+                width: 95%;
+            }
+
+            th,
+            td {
+                font-size: 14px;
+                padding: 10px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>국가목록</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>국가번호</th>
+                    <th>국가이름</th>
+                    <th>국기</th>
+                    <th>수도</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+        <button id="getBtn">불러오기</button>
+    </div>
+    <script>
+        document.querySelector("#getBtn").addEventListener(("click"), () => {
+            fetch("countries.json")
+                .then((res) => {
+                    return res.json();
+                })
+                .then((data) => {
+                    console.log(data);
+                    data.forEach((e) => {
+                        const img = `
+                    <tr>
+                        <td>${e.id}</td>
+                        <td>${e.name}</td>
+                        <td><img src = ${e.imageUrl}></td>
+                        <td>${e.capital}</td>
+                    </tr>
+                    `
+                        document.querySelector("tbody").insertAdjacentHTML("beforeend", img);
+                    });
+                });
+        })
+
+    </script>
+</body>
+
+</html>

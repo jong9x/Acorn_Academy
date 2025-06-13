@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="button">버튼</button>
+    <ul>
+
+    </ul>
+    <script>
+        // 예제 1
+        const jsonData = '{"name":"서종훈", "age": 25}';
+        const stringData = JSON.parse(jsonData);
+
+        // 예제 2
+        const fruits = ["사과", "바나나", "딸기"];
+        const fruitsJson = JSON.stringify(fruits);
+        console.log(fruitsJson);
+
+        // 예제 3
+        const jsonStr = '["유재석", "박명수", "정준하"]';
+        const strJson = JSON.parse(jsonStr);
+        
+        document.querySelector("#button").addEventListener("click", () => {
+            strJson.forEach((a) => {
+                const li = document.createElement("li");
+                li.innerText = a;
+                document.querySelector("ul").append(li);
+            })
+        })
+
+    </script>
+</body>
+
+</html>

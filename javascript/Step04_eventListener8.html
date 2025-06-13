@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step04_eventListener8.html</title>
+</head>
+
+<body>
+    <button>button1</button>
+    <button>button2</button>
+    <button>button3</button>
+    <button>button4</button>
+    <button>button5</button>
+    <script>
+
+        /* 
+            위의 버튼을 눌렀을 때 콘솔창에 "버튼을 눌렀네요?" 라고 출력되도록 프로그래밍 해 보세요.
+            모든 버튼이 다 동작해야합니다.
+            (버튼에 id, class 속성을 부여하지 마세요!)
+        */
+
+        const buttons = document.querySelectorAll("button");
+
+        buttons.forEach((a) => {
+            a.addEventListener("click", () => {
+                a.innerText = "clicked!";
+                console.log("버튼을 눌렀네요?");
+                a.style.color = "aqua";
+                a.style.backgroundColor = "yellow";
+            })
+        });
+
+    </script>
+</body>
+
+</html>

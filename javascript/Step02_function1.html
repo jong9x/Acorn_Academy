@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step02_function1.html</title>
+</head>
+<body>
+    <h1>function type</h1>
+    <script>
+        function printMsg(msg) {
+            console.log(msg);
+        }
+
+        function printSum(num1, num2){
+            // num1, num2 에 number type 데이터가 전달된다는 가정하에서 2 수의 합을 구해서
+            let result = num1 + num2;
+            // 콘솔창에 출력하기기
+            console.log(result);
+        }
+
+        function useFunc(f){
+            // 매개변수에 전달된 데이터가 function type 이라는 가정하에 전달된 함수 호출하기
+            f();
+        }
+
+
+
+        // function printMsg(msg){
+        //     console.log("printMsg() 함수가 호출됨");
+        //     console.log(msg);
+        //     console.log("printMsg() 함수가 리턴됩니다.");
+        // }
+
+    </script>
+</body>
+</html>

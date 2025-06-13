@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="inputMsg">
+    <button onclick="submitMsg()">전송</button>
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+    <script>
+        /*
+            input 요소에 문자열을 입력하고 전송버튼을 눌렀을 때
+            1. 입력한 문자열을 읽어와서 msg 라는 상수에 담고
+            2. msg 상수에 담긴 문자열을 모든 p요소의 innerText 로 지정해보세요.
+        */
+
+        function submitMsg() {
+            const msg = document.querySelector("#inputMsg").value;
+            document.querySelectorAll("p")[0].innerText = msg + " 1번";
+            document.querySelectorAll("p")[1].innerText = msg + " 2번";
+            document.querySelectorAll("p")[2].innerText = msg + " 3번";
+        };
+
+        // function submitMsg() {
+        //     const msg = document.querySelector("#inputMsg").value;
+        //     document.querySelectorAll("p").forEach(p =>{
+        //         p.innerText = msg;
+        //     })
+        // }
+
+
+    </script>
+</body>
+
+</html>

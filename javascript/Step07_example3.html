@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step07_example3.html</title>
+</head>
+
+<body>
+    <button id="getInfo">정보 받아오기</button>
+    <p>이름 : <strong id="name"></strong></p>
+    <h3>취미</h3>
+    <ul id="hobby">
+
+    </ul>
+    <script>
+        document.querySelector("#getInfo").addEventListener(("click"), () => {
+            fetch("info.json")
+                .then((res) => {
+                    return res.json();
+                })
+                .then((data) => {
+                    console.log(data);
+
+                    document.querySelector("#name").innerText = data.name;
+                    data.hobby.forEach((a) => {
+                        // li 요소를 만들 수 있는 문자열 구성하기기
+                        const li = `<li>${a}</li>`;
+                        document.querySelector("#hobby").insertAdjacentHTML("beforeend", li);
+                    })
+
+                })
+        })
+    </script>
+</body>
+
+</html>
