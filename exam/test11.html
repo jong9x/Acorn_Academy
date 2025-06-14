@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test11</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>책 목록</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>번호</th>
+                    <th>제목</th>
+                    <th>저자</th>
+                    <th>만든날짜</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+
+    </div>
+    <button id="getBtn">목록 불러오기</button>
+    <script>
+        
+        document.querySelector("#getBtn").addEventListener(("click"), () => {
+            fetch("posts.json")
+            .then((res)=>{
+                return res.json();
+            })
+            .then((data)=>{
+                console.log(data);
+                
+                data.forEach((a)=>{
+                    const tr = `
+                    <tr>
+                        <td>${a.num}</td>
+                        <td>${a.title}</td>
+                        <td>${a.writer}</td>
+                        <td>${a.createdAt}</td>
+                    </tr>
+                    `;
+                    document.querySelector("tbody").insertAdjacentHTML("beforeend",tr);
+                })
+            });
+        })
+    </script>
+</body>
+
+</html>

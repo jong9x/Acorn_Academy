@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>test8</title>
+  </head>
+
+  <body>
+    <input type="text" id="inputMsg" placeholder="문자열 입력..." />
+    <button id="getBtn">버튼</button>
+    <input type="text" id="target" />
+
+    <script>
+      document.querySelector("#getBtn").addEventListener("click", (e) => {
+        const ipName = document.querySelector("#inputMsg").value;
+        document.querySelector("#target").value = ipName;
+        
+
+      });
+    </script>
+  </body>
+</html>

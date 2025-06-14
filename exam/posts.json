@@ -1,0 +1,32 @@
+[
+  {
+    "num": 1,
+    "title": "자바스크립트 기초 문법",
+    "writer": "김구라",
+    "createdAt": "2024-06-01"
+  },
+  {
+    "num": 2,
+    "title": "HTML과 CSS 정리",
+    "writer": "해골",
+    "createdAt": "2024-06-02"
+  },
+  {
+    "num": 3,
+    "title": "React 상태관리 기초",
+    "writer": "주뎅이",
+    "createdAt": "2024-06-03"
+  },
+  {
+    "num": 4,
+    "title": "Spring Boot 게시판 만들기",
+    "writer": "원숭이",
+    "createdAt": "2024-06-04"
+  },
+  {
+    "num": 5,
+    "title": "Node.js와 Express 서버",
+    "writer": "덩어리",
+    "createdAt": "2024-06-05"
+  }
+]
